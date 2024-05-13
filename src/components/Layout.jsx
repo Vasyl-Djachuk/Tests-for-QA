@@ -38,14 +38,14 @@ const Layout = () => {
     dispatch(setToast(''));
   }, [message, dispatch]);
   return (
-    <div>
+    <>
       <AppBars />
       <Suspense fallback={null}>
         <Outlet />
       </Suspense>
       <BackdropLoder />
       <Toaster position="top-right" reverseOrder={false} />
-    </div>
+    </>
   );
 };
 

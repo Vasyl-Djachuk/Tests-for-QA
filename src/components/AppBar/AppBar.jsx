@@ -2,14 +2,14 @@ import Navigation from '../Navigation/Navigation';
 import UserMenu from '../UserMenu/UserMenu';
 import AuthNav from '../AuthNav/AuthNav';
 import { useAuth } from '../../hooks';
-import css from './AppBar.module.css';
-import AppBar from '@mui/material/AppBar';
+import css from './AppBar.module.scss';
 import { Button, Toolbar } from '@mui/material';
 import SearchBox from '../SearchBox/SearchBox';
 import { useDispatch, useSelector } from 'react-redux';
 import { setAddContactModal } from '../../redux/modal/slice';
 import { selectAddModal } from '../../redux/modal/selectors';
 import { useLocation } from 'react-router-dom';
+import Container from '../../shared/components/Container/Container';
 
 const AppBars = () => {
   const { isLoggedIn } = useAuth();
@@ -23,9 +23,16 @@ const AppBars = () => {
   };
 
   return (
-    <AppBar sx={{ mb: 3 }} position="absolute">
-      <Toolbar>
+    <header>
+      <Container>
         <div className={css.wrapper}>
+          <img
+            src="/src/shared/images/logoMob.png"
+            alt="logo"
+            width="129"
+            height="28"
+          />
+
           <Navigation />
           {isLoggedIn && isContactPage && (
             <div className={css.tools}>
@@ -37,8 +44,8 @@ const AppBars = () => {
           )}
           <div>{isLoggedIn ? <UserMenu /> : <AuthNav />}</div>
         </div>
-      </Toolbar>
-    </AppBar>
+      </Container>
+    </header>
   );
 };
 
