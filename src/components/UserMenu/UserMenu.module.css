@@ -1,0 +1,23 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.username {
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+.userIcon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #78b4e6;
+}
+.wrapper {
+  display: flex;
+  column-gap: 40px;
+}
